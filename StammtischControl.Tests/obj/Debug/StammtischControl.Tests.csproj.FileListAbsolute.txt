@@ -1,7 +1,0 @@
-C:\Projetos\StammtischControl\StammtischControl.Tests\bin\Debug\StammtischControl.Tests.dll
-C:\Projetos\StammtischControl\StammtischControl.Tests\bin\Debug\StammtischControl.Tests.pdb
-C:\Projetos\StammtischControl\StammtischControl.Tests\bin\Debug\StammtischControl.dll
-C:\Projetos\StammtischControl\StammtischControl.Tests\bin\Debug\StammtischControl.pdb
-C:\Projetos\StammtischControl\StammtischControl.Tests\obj\Debug\StammtischControl.Tests.csprojResolveAssemblyReference.cache
-C:\Projetos\StammtischControl\StammtischControl.Tests\obj\Debug\StammtischControl.Tests.dll
-C:\Projetos\StammtischControl\StammtischControl.Tests\obj\Debug\StammtischControl.Tests.pdb
