@@ -77,6 +77,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201602232036175_Inicial.cs" />
+    <Compile Include="Migrations\201602232036175_Inicial.Designer.cs">
+      <DependentUpon>201602232036175_Inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\CategoriaItem.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\Item.cs" />
@@ -90,6 +94,11 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201602232036175_Inicial.resx">
+      <DependentUpon>201602232036175_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
