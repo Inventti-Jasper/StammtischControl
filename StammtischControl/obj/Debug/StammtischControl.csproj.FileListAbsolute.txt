@@ -1,0 +1,6 @@
+C:\Projetos\StammtischControl\StammtischControl\bin\StammtischControl.dll.config
+C:\Projetos\StammtischControl\StammtischControl\bin\StammtischControl.dll
+C:\Projetos\StammtischControl\StammtischControl\bin\StammtischControl.pdb
+C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.csprojResolveAssemblyReference.cache
+C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.dll
+C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.pdb
