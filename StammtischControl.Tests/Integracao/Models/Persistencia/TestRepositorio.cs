@@ -6,7 +6,7 @@ using StammtischControl.Tests.Builder;
 
 namespace StammtischControl.Tests.Integracao.Models.Persistencia
 {
-    public class TestRepositorio
+    public class TestRepositorio: RepositorioTesteBase
     {
         private Repositorio<Participante> _repositorio;
 
