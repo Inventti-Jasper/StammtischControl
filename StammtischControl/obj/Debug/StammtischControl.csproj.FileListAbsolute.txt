@@ -4,3 +4,7 @@ C:\Projetos\StammtischControl\StammtischControl\bin\StammtischControl.pdb
 C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.csprojResolveAssemblyReference.cache
 C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.dll
 C:\Projetos\StammtischControl\StammtischControl\obj\Debug\StammtischControl.pdb
+C:\Projetos\StammtischControl\StammtischControl\bin\EntityFramework.dll
+C:\Projetos\StammtischControl\StammtischControl\bin\EntityFramework.SqlServer.dll
+C:\Projetos\StammtischControl\StammtischControl\bin\EntityFramework.xml
+C:\Projetos\StammtischControl\StammtischControl\bin\EntityFramework.SqlServer.xml
