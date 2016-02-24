@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
+using System.Linq;
 using StammtischControl.Models.Entidades;
 
 namespace StammtischControl.Models.Persistencia
 {
-    public class Repositorio<TEntidade> where TEntidade : Entidade
+    public class Repositorio<TEntidade> : IRepositorio<TEntidade> where TEntidade : Entidade
     {
         private readonly RepositorioContexto _repositorioContexto;
         private readonly DbSet<TEntidade> _dbSet;
@@ -38,6 +40,11 @@ namespace StammtischControl.Models.Persistencia
             var entidade = Buscar(id);
             _dbSet.Remove(entidade);
             _repositorioContexto.SaveChanges();
+        }
+
+        public List<TEntidade> ObterTodos()
+        {
+            return _dbSet.ToList();
         }
     }
 }
