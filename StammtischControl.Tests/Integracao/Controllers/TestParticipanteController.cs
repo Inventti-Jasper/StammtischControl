@@ -11,14 +11,14 @@ namespace StammtischControl.Tests.Integracao.Controllers
 {
     public class TestParticipanteController: RepositorioTesteBase
     {
-        private ParticipanteController participanteController;
+        private ParticipanteController _participanteController;
         private Repositorio<Participante> _repositorio;
 
         [SetUp]
         public void SetUp()
         {
             _repositorio = new Repositorio<Participante>(new RepositorioContexto());
-            participanteController = new ParticipanteController(_repositorio);
+            _participanteController = new ParticipanteController(_repositorio);
         }
 
         [Test]
@@ -28,13 +28,27 @@ namespace StammtischControl.Tests.Integracao.Controllers
             var participante2 = new ParticipanteBuilderTest().Criar();
             _repositorio.Salvar(participante1);
             _repositorio.Salvar(participante2);
-            var actionResult = participanteController.Index();
+            var actionResult = _participanteController.Index();
 
             var participantes = (List<Participante>) ((System.Web.Mvc.ViewResultBase) (actionResult)).Model;
             participantes.Should().NotBeNullOrEmpty();
             participantes.Count.Should().Be(2);
             participantes.Should().Contain(participante1);
             participantes.Should().Contain(participante2);
+        }
+
+        [Test]
+        public void salvando_participante()
+        {
+            var participante = new ParticipanteBuilderTest().Criar();
+
+            _participanteController.FrmCadastroParticipante(participante);
+
+            var participantesCadastrados = _repositorio.ObterTodos();
+
+            participantesCadastrados.Should().NotBeEmpty();
+            participantesCadastrados.Count.Should().Be(1);
+            participantesCadastrados[0].ShouldBeEquivalentTo(participante);
         }
     }
 }

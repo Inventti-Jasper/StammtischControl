@@ -1,0 +1,21 @@
+﻿@model StammtischControl.Models.Entidades.CadastroGeral.Participante
+@{
+    ViewBag.Title = "Cadastro Participante";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Cadastrar Participante</h2>
+
+<section>
+    <form method="POST">
+        <label>Nome:</label>
+        <input type="text" name="Nome"/>
+        <label>CPF:</label>
+        <input type="text" name="CPF" />
+        <label>E-mail:</label>
+        <input type="text" name="Email" />
+        <label>Telefone:</label>
+        <input type="text" name="Telefone" />
+        <input type="submit" value="Salvar"/>
+    </form>
+</section>
