@@ -1,0 +1,43 @@
+﻿/*stammtisch.css*/
+label {
+    font-weight: bold;
+}
+
+.menu {
+    font-size: 12px;
+    margin:0;
+}
+
+    .menu li {
+        list-style-type: none;
+        margin:0;
+    }
+
+        .menu li.active {
+            font-weight: bold;
+        }
+
+body {
+    margin: 0;    
+    font-size:14px;
+}
+
+.list{
+    float:left;
+    background-color:aliceblue;
+    margin:4px;
+}
+#sidebar {
+    background: #bebebe;
+    color: #eee;
+    position: fixed;
+    height: 100%;
+    width: 150px;
+    overflow: hidden;
+    left: 0;
+    margin: 0;
+}
+
+#content {
+    margin: 0 0 0 150px;
+}
