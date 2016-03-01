@@ -5,19 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Participantes</h2>
-@Html.ActionLink("Novo", "FrmCadastroParticipante", "Participante", new { area = "" }, new { @class = "navbar-brand" })
-<br />
-<article>
-    @foreach (Participante participante in @Model)
-    {
-        <section class="list">
-            <b>@participante.Nome</b>
-            CPF: @participante.CPF<br/>
-            E-mail: @participante.Email<br />
-            Telefone: @participante.Telefone<br />
-        </section>
-    }
-</article>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Participantes</h2>
+
+            @Html.ActionLink("Novo", "FrmCadastroParticipante", "Participante", new { area = "" }, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+    <div class="row">
+        @foreach (Participante participante in @Model)
+        {
+            <div class="col-xs-6 col-md-3">
+                <h4 class="media-heading">@participante.Nome</h4>
+                <p> CPF: @participante.CPF</p>
+                <p>E-mail: @participante.Email</p>
+                <p>Telefone: @participante.Telefone</p>
+            </div>
+        }
+    </div>
+</div>
 
 
