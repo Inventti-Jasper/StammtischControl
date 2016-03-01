@@ -13,7 +13,7 @@ namespace StammtischControl.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602232036175_Inicial"; }
+            get { return "201602261045166_Inicial"; }
         }
         
         string IMigrationMetadata.Source

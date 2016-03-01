@@ -160,9 +160,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602232036175_Inicial.cs" />
-    <Compile Include="Migrations\201602232036175_Inicial.Designer.cs">
-      <DependentUpon>201602232036175_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\201602261045166_Inicial.cs" />
+    <Compile Include="Migrations\201602261045166_Inicial.Designer.cs">
+      <DependentUpon>201602261045166_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\CategoriaItem.cs" />
@@ -183,8 +183,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602232036175_Inicial.resx">
-      <DependentUpon>201602232036175_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602261045166_Inicial.resx">
+      <DependentUpon>201602261045166_Inicial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

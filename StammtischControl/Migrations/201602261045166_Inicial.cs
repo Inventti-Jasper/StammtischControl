@@ -35,10 +35,10 @@ namespace StammtischControl.Migrations
                 c => new
                     {
                         Id = c.Int(nullable: false, identity: true),
-                        Nome = c.String(),
-                        CPF = c.String(),
-                        Email = c.String(),
-                        Telefone = c.String(),
+                        Nome = c.String(nullable: false),
+                        CPF = c.String(nullable: false),
+                        Email = c.String(nullable: false),
+                        Telefone = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Id);
             
