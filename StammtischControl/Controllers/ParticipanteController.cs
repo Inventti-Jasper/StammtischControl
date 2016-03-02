@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using StammtischControl.Models.Entidades.CadastroGeral;
 using StammtischControl.Models.Persistencia;
 
@@ -16,8 +17,13 @@ namespace StammtischControl.Controllers
         // GET: Participante
         public ActionResult Index()
         {
-            var participantes = _repositorio.ObterTodos();
-            return View(participantes);
+            return CriarIndex();
+        }
+
+        private ActionResult CriarIndex()
+        {
+            var participantes = _repositorio.ObterTodos().OrderBy(participante => participante.Nome).ToList();
+            return View("Index", participantes);
         }
 
         public ActionResult FrmCadastroParticipante()
@@ -29,8 +35,8 @@ namespace StammtischControl.Controllers
         public ActionResult FrmCadastroParticipante(Participante participante)
         {
             _repositorio.Salvar(participante);
-            var participantes = _repositorio.ObterTodos();
-            return View("Index", participantes);
+            
+            return CriarIndex();
         }
     }
 }
