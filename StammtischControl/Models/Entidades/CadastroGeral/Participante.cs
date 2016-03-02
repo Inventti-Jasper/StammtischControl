@@ -12,6 +12,7 @@ namespace StammtischControl.Models.Entidades.CadastroGeral
         public string CPF { get;  set; }
         
         [Required(ErrorMessage = "O E-amil é obrigatório")]
+        [EmailAddress(ErrorMessage = "Não é um E-mail válido")]
         public string Email { get;  set; }
 
         [Required(ErrorMessage = "O telefone é obrigatório")]
