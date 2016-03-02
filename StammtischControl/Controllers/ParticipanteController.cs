@@ -29,8 +29,8 @@ namespace StammtischControl.Controllers
         public ActionResult FrmCadastroParticipante(Participante participante)
         {
             _repositorio.Salvar(participante);
-            
-            return Index();
+            var participantes = _repositorio.ObterTodos();
+            return View("Index", participantes);
         }
     }
 }

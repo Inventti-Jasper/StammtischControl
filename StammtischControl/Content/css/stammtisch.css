@@ -1,39 +1,8 @@
 ﻿/*stammtisch.css*/
-label {
-    font-weight: bold;
-    display: block;
-}
-
-input {
-    width: 200px;
-}
-
-    input[type=submit] {
-        width: auto;
-    }
-
-.menu {
-    font-size: 12px;
-    margin: 0;
-}
-
-    .menu li {
-        list-style-type: none;
-        margin: 0;
-    }
-
-        .menu li.active {
-            font-weight: bold;
-        }
-
-section {
-    padding-left: 20px;
-}
-
 body {
     margin: 0;
     font-size: 14px;
-    background-color: #808080;
+    background-color: #fffff0;
 }
 footer {
     position: fixed;
@@ -44,23 +13,6 @@ footer {
     padding: 8px;
     width: 100%;
 }
-.list {
-    float: left;
-    background-color: aliceblue;
-    margin: 4px;
-}
-
-#sidebar {
-    background: #bebebe;
-    color: #eee;
-    position: fixed;
-    height: 100%;
-    width: 150px;
-    overflow: hidden;
-    left: 0;
-    margin: 0;
-}
-
-#content {
-    margin: 0 0 0 150px;
+.margin {
+    margin-left: 5px;
 }

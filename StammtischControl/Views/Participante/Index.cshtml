@@ -9,21 +9,22 @@
     <div class="row">
         <div class="col-md-12">
             <h2>Participantes</h2>
-
             @Html.ActionLink("Novo", "FrmCadastroParticipante", "Participante", new { area = "" }, new { @class = "btn btn-primary" })
+            <br/>
+            <br/>
         </div>
     </div>
     <div class="row">
         @foreach (Participante participante in @Model)
         {
             <div class="col-xs-6 col-md-3">
-                <h4 class="media-heading">@participante.Nome</h4>
-                <p> CPF: @participante.CPF</p>
-                <p>E-mail: @participante.Email</p>
-                <p>Telefone: @participante.Telefone</p>
+                <div class="thumbnail">
+                    <h4 class="media-heading">@participante.Nome</h4>
+                    <p> CPF: @participante.CPF</p>
+                    <p>E-mail: @participante.Email</p>
+                    <p>Telefone: @participante.Telefone</p>
+                </div>
             </div>
         }
     </div>
 </div>
-
-

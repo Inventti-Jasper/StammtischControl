@@ -3,30 +3,48 @@
     ViewBag.Title = "Cadastro Participante";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<section class="container">
+    <h2>Cadastrar Participante</h2>
 
-<h2>Cadastrar Participante</h2>
 
-<section>
     <form method="POST">
-        <div>
-            <label>Nome:</label>
-            <input type="text" name="Nome" />
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>Nome:</label>
+                    <input type="text" name="Nome" class="form-control" placeholder="João da Silva Miranda" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>CPF:</label>
+                    <input type="text" name="CPF" class="form-control" placeholder="01232114565" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>E-mail:</label>
+                    <input type="email" name="Email" class="form-control" placeholder="admin@dominio.com" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+
+                    <label>Telefone:</label>
+                    <input type="text" name="Telefone" class="form-control" placeholder="(47)9999-0876" />
+                </div>
+            </div>
         </div>
         <div>
-            <label>CPF:</label>
-            <input type="text" name="CPF"/>
-        </div>
-        <div>
-            <label>E-mail:</label>
-            <input type="text" name="Email"/>
-        </div>
-        <div>
-            <label>Telefone:</label>
-            <input type="text" name="Telefone" />
-        </div>
-        <div>
-            <br/>
-            <input type="submit" value="Salvar"/>
+            @Html.ActionLink("Voltar", "Index", new {}, new {@class= "btn btn-danger"})
+            <input type="submit" value="Salvar" class="btn btn-success"/>
         </div>
     </form>
 </section>
