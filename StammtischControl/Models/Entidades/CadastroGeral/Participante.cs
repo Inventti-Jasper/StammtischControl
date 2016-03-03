@@ -9,9 +9,10 @@ namespace StammtischControl.Models.Entidades.CadastroGeral
         public string Nome { get;  set; }
         
         [Required(ErrorMessage = "O CPF é obrigatório")]
+        [StringLength(11,MinimumLength =11, ErrorMessage ="O CPF deve conter 11 digitos")]
         public string CPF { get;  set; }
         
-        [Required(ErrorMessage = "O E-amil é obrigatório")]
+        [Required(ErrorMessage = "O e-mail é obrigatório")]
         [EmailAddress(ErrorMessage = "Não é um E-mail válido")]
         public string Email { get;  set; }
 
