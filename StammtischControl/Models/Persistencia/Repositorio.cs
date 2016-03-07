@@ -21,13 +21,19 @@ namespace StammtischControl.Models.Persistencia
         {
             try
             {
-                _dbSet.Add(entidade);
-                _repositorioContexto.SaveChanges();
+                 _dbSet.Add(entidade);
+                _repositorioContexto.SaveChanges();                
             }
             catch (Exception exception)
             {
                 throw new Exception(string.Format("Falha ao salvar o registro. Erro: {0}", exception.Message), exception);
             }
+        }
+
+        public void Editar(TEntidade entidade)
+        {
+            _repositorioContexto.Entry(entidade).State = EntityState.Modified;
+            _repositorioContexto.SaveChanges();
         }
 
         public TEntidade Buscar(int id)

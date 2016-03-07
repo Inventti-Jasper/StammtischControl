@@ -13,8 +13,7 @@ namespace StammtischControl.Windsor
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Component.For<IRepositorio<Participante>>().ImplementedBy<Repositorio<Participante>>().LifestylePerWebRequest());
-            //container.Register(Component.For<HomeController>().LifestyleSingleton());
-            container.Register(Classes.FromAssemblyContaining<HomeController>().Pick().LifestylePerWebRequest());
+            container.Register(Classes.FromAssemblyContaining<ParticipanteController>().Pick().LifestylePerWebRequest());
         }
     }
 }

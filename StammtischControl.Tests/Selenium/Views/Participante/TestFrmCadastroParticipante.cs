@@ -75,7 +75,6 @@ namespace StammtischControl.Tests.Selenium.Views.Participante
                 webDriver.FindElement(By.XPath("//span[@for='Email']")).Text.Should().Be("O e-mail é obrigatório");
                 webDriver.FindElement(By.XPath("//span[@for='Telefone']")).Text.Should().Be("O telefone é obrigatório");
 
-
                 webDriver.Close();
             }
 

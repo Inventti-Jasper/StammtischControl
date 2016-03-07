@@ -35,7 +35,20 @@ namespace StammtischControl.Controllers
         public ActionResult FrmCadastroParticipante(Participante participante)
         {
             _repositorio.Salvar(participante);
-            
+
+            return CriarIndex();
+        }
+
+        public ActionResult FrmEditarParticipante(int id)
+        {
+            var participante = _repositorio.Buscar(id);
+            return View(participante);
+        }
+
+        [HttpPost]
+        public ActionResult FrmEditarParticipante(int id, Participante participante)
+        {
+            _repositorio.Editar(participante);
             return CriarIndex();
         }
     }

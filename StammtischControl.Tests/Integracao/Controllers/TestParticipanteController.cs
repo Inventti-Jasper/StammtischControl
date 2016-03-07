@@ -9,7 +9,7 @@ using StammtischControl.Tests.Builder;
 
 namespace StammtischControl.Tests.Integracao.Controllers
 {
-    public class TestParticipanteController: RepositorioTesteBase
+    public class TestParticipanteController : RepositorioTesteBase
     {
         private ParticipanteController _participanteController;
         private Repositorio<Participante> _repositorio;
@@ -32,8 +32,8 @@ namespace StammtischControl.Tests.Integracao.Controllers
             _repositorio.Salvar(participante3);
             var actionResult = _participanteController.Index();
 
-            var participantes = (List<Participante>) ((ViewResultBase) (actionResult)).Model;
-            ((ViewResultBase) actionResult).ViewName.Should().Be("Index");
+            var participantes = (List<Participante>)((ViewResultBase)(actionResult)).Model;
+            ((ViewResultBase)actionResult).ViewName.Should().Be("Index");
             participantes.Should().NotBeNullOrEmpty();
             participantes.Count.Should().Be(3);
             participantes[0].Nome.Should().Be(participante2.Nome);
@@ -63,7 +63,7 @@ namespace StammtischControl.Tests.Integracao.Controllers
             var participante3 = new ParticipanteBuilderTest().ComNome("Cccc").Criar();
             _repositorio.Salvar(participante1);
             _repositorio.Salvar(participante2);
-            
+
             var actionResult = _participanteController.FrmCadastroParticipante(participante3);
 
             var participantes = (List<Participante>)((ViewResultBase)(actionResult)).Model;
@@ -74,6 +74,40 @@ namespace StammtischControl.Tests.Integracao.Controllers
             participantes[0].Nome.Should().Be(participante2.Nome);
             participantes[1].Nome.Should().Be(participante1.Nome);
             participantes[2].Nome.Should().Be(participante3.Nome);
+        }
+
+        [Test]
+        public void carregando_participante_para_editar()
+        {
+            var participante = new ParticipanteBuilderTest().Criar();
+            _repositorio.Salvar(participante);
+
+            var actionResult = _participanteController.FrmEditarParticipante(participante.Id);
+
+            var participanteModel = (Participante)((ViewResultBase)(actionResult)).Model;
+
+            participanteModel.ShouldBeEquivalentTo(participante);
+        }
+
+        [Test]
+        public void carregando_participante_inexistente_para_editar()
+        {
+            const int idInexistente = 12;
+            _participanteController.FrmEditarParticipante(idInexistente);
+            Assert.Fail();
+        }
+
+        [Test]
+        public void salvando_edicao_do_participante()
+        {
+            var participanteOriginal = new ParticipanteBuilderTest().ComNome("Carlos").Criar();
+            var participanteEditado = new ParticipanteBuilderTest().ComNome("Carlos Gomes").Criar();
+            participanteEditado.Id = participanteOriginal.Id;
+            _repositorio.Salvar(participanteOriginal);
+
+            var actionResult = _participanteController.FrmEditarParticipante(participanteOriginal.Id, participanteEditado);
+
+            ((ViewResultBase)actionResult).ViewName.Should().Be("Index");
         }
     }
 }

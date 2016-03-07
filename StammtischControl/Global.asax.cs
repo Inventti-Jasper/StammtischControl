@@ -21,7 +21,7 @@ namespace StammtischControl
 
         private void RegistrarRotas(RouteCollection routes)
         {
-            routes.MapRoute("padrao", "{controller}/{action}/{id}", new { controller = "Home", action = "Index", id = UrlParameter.Optional });
+            routes.MapRoute("padrao", "{controller}/{action}/{id}", new { controller = "Participante", action = "Index", id = UrlParameter.Optional });
         }
 
         public static void ConfigureWindsor()

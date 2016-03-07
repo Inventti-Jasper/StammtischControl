@@ -6,6 +6,7 @@ namespace StammtischControl.Models.Persistencia
     public interface IRepositorio<TEntidade> where TEntidade : Entidade
     {
         void Salvar(TEntidade entidade);
+        void Editar(TEntidade entidade);
         TEntidade Buscar(int id);
         List<TEntidade> ObterTodos();
         void Excluir(int id);
