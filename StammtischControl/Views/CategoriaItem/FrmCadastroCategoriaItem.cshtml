@@ -1,0 +1,43 @@
+﻿@using StammtischControl.Models.Entidades.CadastroGeral
+@model StammtischControl.Models.Entidades.CadastroGeral.CategoriaItem
+@{
+    ViewBag.Title = "Cadastro Categoria Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section Scripts{
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+<section class="container">
+    <h2>Cadastrar Categoria Item</h2>
+
+
+    <form method="POST">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>*Descrição</label>
+                    @Html.TextBoxFor(x => x.Descricao, new { @class = "form-control", @placeholder = "Alimentação" })
+                    <p class="text-danger">
+                        @Html.ValidationMessageFor(x => x.Descricao)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group">
+                    <label>*Tipo Rateio</label>
+                    @Html.DropDownListFor(x => x.TipoRateio, CategoriaItem.TiposRateio, new { @class = "form-control", @placeholder = "Selecione" })
+                    <p class="text-danger">
+                        @Html.ValidationMessageFor(x => x.TipoRateio)
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div>
+            @Html.ActionLink("Voltar", "Index", new { }, new { @class = "btn btn-danger" })
+            <input id="salvar" type="submit" value="Salvar" class="btn btn-success" />
+        </div>
+    </form>
+</section>

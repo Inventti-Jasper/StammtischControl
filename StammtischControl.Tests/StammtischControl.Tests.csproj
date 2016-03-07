@@ -106,13 +106,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Builder\CategoriaItemBuilderTest.cs" />
     <Compile Include="Builder\ParticipanteBuilderTest.cs" />
+    <Compile Include="Integracao\Controllers\TestCategoriaItemController.cs" />
     <Compile Include="Integracao\Controllers\TestParticipanteController.cs" />
+    <Compile Include="Integracao\Models\Entidades\CadastroGeral\TestCategoriaItem.cs" />
     <Compile Include="Integracao\Models\Persistencia\TestRepositorio.cs" />
     <Compile Include="Integracao\RepositorioTesteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selenium\Views\Participante\TestFrmCadastroParticipante.cs" />
     <Compile Include="Selenium\Views\Participante\TestFrmEditarParticipante.cs" />
+    <Compile Include="Unidade\Models\Entidades\CadastroGeral\TestCategoriaItem.cs" />
+    <Compile Include="Unidade\Models\Extension\TestEnumExtension.cs" />
     <Compile Include="Unidade\Models\Persistencia\TestRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,11 +126,7 @@
       <Name>StammtischControl</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Integracao\Models\Entidades\" />
-    <Folder Include="Unidade\Controllers\" />
-    <Folder Include="Unidade\Models\Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />

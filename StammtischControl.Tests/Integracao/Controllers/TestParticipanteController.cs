@@ -77,6 +77,14 @@ namespace StammtischControl.Tests.Integracao.Controllers
         }
 
         [Test]
+        public void retornando_view_para_cadastro_de_participante()
+        {
+            var actionResult = _participanteController.FrmCadastroParticipante();
+
+            ((ViewResultBase) actionResult).ViewName.Should().Be("FrmCadastroParticipante");
+        }
+
+        [Test]
         public void carregando_participante_para_editar()
         {
             var participante = new ParticipanteBuilderTest().Criar();

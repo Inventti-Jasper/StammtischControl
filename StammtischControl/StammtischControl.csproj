@@ -141,6 +141,8 @@
     <Content Include="Views\Participante\Index.cshtml" />
     <Content Include="Views\Participante\FrmCadastroParticipante.cshtml" />
     <Content Include="Views\Participante\FrmEditarParticipante.cshtml" />
+    <Content Include="Views\CategoriaItem\Index.cshtml" />
+    <Content Include="Views\CategoriaItem\FrmCadastroCategoriaItem.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -157,6 +159,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaItemController.cs" />
     <Compile Include="Controllers\ParticipanteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -166,6 +169,7 @@
       <DependentUpon>201602261045166_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Attributes\DescricaoEnumAttribute.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\CategoriaItem.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\Item.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\Participante.cs" />
@@ -173,6 +177,7 @@
     <Compile Include="Models\Entidades\CadastroGeral\TipoNecessidade.cs" />
     <Compile Include="Models\Entidades\CadastroGeral\TipoRateio.cs" />
     <Compile Include="Models\Entidades\Entidade.cs" />
+    <Compile Include="Models\Extension\EnumExtension.cs" />
     <Compile Include="Models\Persistencia\IRepositorio.cs" />
     <Compile Include="Models\Persistencia\Repositorio.cs" />
     <Compile Include="Models\Persistencia\RepositorioContexto.cs" />

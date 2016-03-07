@@ -38,7 +38,7 @@ namespace StammtischControl.Models.Persistencia
 
         public TEntidade Buscar(int id)
         {
-            return _dbSet.First(x => x.Id == id);
+            return _dbSet.Find(id);
         }
 
         public void Excluir(int id)

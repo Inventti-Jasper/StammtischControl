@@ -28,7 +28,7 @@ namespace StammtischControl.Controllers
 
         public ActionResult FrmCadastroParticipante()
         {
-            return View();
+            return View("FrmCadastroParticipante");
         }
 
         [HttpPost]

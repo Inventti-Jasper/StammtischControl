@@ -1,0 +1,29 @@
+﻿@model List<StammtischControl.Models.Entidades.CadastroGeral.CategoriaItem>
+@using StammtischControl.Models.Entidades.CadastroGeral
+@using StammtischControl.Models.Extension
+@{
+    ViewBag.Title = "Categoria Item";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Categoria Item</h2>
+            @Html.ActionLink("Novo", "FrmCadastroCategoriaItem", "CategoriaItem", new { area = "" }, new { @class = "btn btn-primary" , @id="NovoParticipante"})
+            <br/>
+            <br/>
+        </div>
+    </div>
+    <div class="row">
+        @foreach (CategoriaItem categoriaItem in @Model)
+        {
+            <div class="col-xs-6 col-md-3">
+                <div class="thumbnail">
+                    <h4 class="media-heading">@categoriaItem.Descricao</h4>
+                    <p>Rateio: @categoriaItem.TipoRateio.ObterDescricao()</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
