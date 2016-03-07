@@ -51,6 +51,23 @@ namespace StammtischControl.Tests.Integracao.Models.Persistencia
         }
 
         [Test]
+        public void atualizando_participante()
+        {
+            var participante = new ParticipanteBuilderTest().ComNome("Robert").Criar();
+            _repositorio.Salvar(participante);
+
+            var participanteParaAtualizar = _repositorio.Buscar(participante.Id);
+
+            participanteParaAtualizar.Nome = "Robert da Silveira";
+
+            _repositorio.Atualizar(participanteParaAtualizar);
+
+            var participanteAtualizado = _repositorio.Buscar(participanteParaAtualizar.Id);
+
+            participanteAtualizado.Nome.Should().Be("Robert da Silveira");
+        }
+
+        [Test]
         public void obtendo_todos_os_participantes()
         {
             var participante = new ParticipanteBuilderTest().Criar();

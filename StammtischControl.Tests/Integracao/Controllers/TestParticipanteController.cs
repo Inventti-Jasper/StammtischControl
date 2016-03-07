@@ -90,24 +90,19 @@ namespace StammtischControl.Tests.Integracao.Controllers
         }
 
         [Test]
-        public void carregando_participante_inexistente_para_editar()
-        {
-            const int idInexistente = 12;
-            _participanteController.FrmEditarParticipante(idInexistente);
-            Assert.Fail();
-        }
-
-        [Test]
         public void salvando_edicao_do_participante()
         {
-            var participanteOriginal = new ParticipanteBuilderTest().ComNome("Carlos").Criar();
-            var participanteEditado = new ParticipanteBuilderTest().ComNome("Carlos Gomes").Criar();
-            participanteEditado.Id = participanteOriginal.Id;
-            _repositorio.Salvar(participanteOriginal);
+            var participante = new ParticipanteBuilderTest().ComNome("Carlos").Criar();
+            
+            _repositorio.Salvar(participante);
+            var participanteParaEditar = _repositorio.Buscar(participante.Id);
 
-            var actionResult = _participanteController.FrmEditarParticipante(participanteOriginal.Id, participanteEditado);
+            participanteParaEditar.Nome = "Carlos Gomes da Silva";
+            var actionResult = _participanteController.FrmEditarParticipante(participante.Id, participanteParaEditar);
 
             ((ViewResultBase)actionResult).ViewName.Should().Be("Index");
+            var participanteAtualizado = _repositorio.Buscar(participante.Id);
+            participanteAtualizado.Nome.Should().Be("Carlos Gomes da Silva");
         }
     }
 }

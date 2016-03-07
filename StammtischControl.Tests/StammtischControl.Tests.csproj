@@ -112,6 +112,7 @@
     <Compile Include="Integracao\RepositorioTesteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selenium\Views\Participante\TestFrmCadastroParticipante.cs" />
+    <Compile Include="Selenium\Views\Participante\TestFrmEditarParticipante.cs" />
     <Compile Include="Unidade\Models\Persistencia\TestRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>

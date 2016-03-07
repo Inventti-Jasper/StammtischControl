@@ -30,7 +30,7 @@ namespace StammtischControl.Models.Persistencia
             }
         }
 
-        public void Editar(TEntidade entidade)
+        public void Atualizar(TEntidade entidade)
         {
             _repositorioContexto.Entry(entidade).State = EntityState.Modified;
             _repositorioContexto.SaveChanges();
@@ -38,7 +38,7 @@ namespace StammtischControl.Models.Persistencia
 
         public TEntidade Buscar(int id)
         {
-            return _dbSet.Find(id);
+            return _dbSet.First(x => x.Id == id);
         }
 
         public void Excluir(int id)

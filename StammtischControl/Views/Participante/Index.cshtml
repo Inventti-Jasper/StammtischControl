@@ -19,7 +19,7 @@
         {
             <div class="col-xs-6 col-md-3">
                 <div class="thumbnail">
-                    <h4 class="media-heading">@Html.ActionLink(@participante.Nome, "FrmEditarParticipante", new { @id = @participante.Id })</h4>
+                    <h4 class="media-heading">@Html.ActionLink(@participante.Nome, "FrmEditarParticipante", new { @id = @participante.Id }, new {@id="participante_"+@participante.Id})</h4>
                     <p> CPF: @participante.CPF</p>
                     <p>E-mail: @participante.Email</p>
                     <p>Telefone: @participante.Telefone</p>

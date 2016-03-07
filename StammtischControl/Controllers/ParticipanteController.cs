@@ -42,13 +42,14 @@ namespace StammtischControl.Controllers
         public ActionResult FrmEditarParticipante(int id)
         {
             var participante = _repositorio.Buscar(id);
+            
             return View(participante);
         }
 
         [HttpPost]
         public ActionResult FrmEditarParticipante(int id, Participante participante)
         {
-            _repositorio.Editar(participante);
+            _repositorio.Atualizar(participante);
             return CriarIndex();
         }
     }
