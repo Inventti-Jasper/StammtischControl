@@ -2,15 +2,13 @@
 using FluentAssertions;
 using NUnit.Framework;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-using OpenQA.Selenium.Support.Extensions;
 using StammtischControl.Models.Persistencia;
 using StammtischControl.Tests.Builder;
-using StammtischControl.Tests.Integracao;
+using StammtischControl.Tests.Integracao.Models;
 
 namespace StammtischControl.Tests.Selenium.Views.Participante
 {
-    public class TestFrmEditarParticipante : RepositorioTesteBase
+    public class TestFrmEditarParticipante : SeleniumDriverBase
     {
         private const string host = "http://localhost:50295/";
         private Repositorio<Models.Entidades.CadastroGeral.Participante> _repositorio;
@@ -28,15 +26,14 @@ namespace StammtischControl.Tests.Selenium.Views.Participante
         {
             var participante = new ParticipanteBuilderTest().Criar();
             _repositorio.Salvar(participante);
-            using (IWebDriver webDriver = new ChromeDriver())
-            {
-                webDriver.Navigate().GoToUrl($"{host}Participante/Index");
-                webDriver.Manage().Window.Maximize();
-                webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
-                Thread.Sleep(500);
-                webDriver.Url.Should().Be($"{host}Participante/FrmEditarParticipante/{participante.Id}");
-                webDriver.Close();
-            }
+
+            _webDriver.Navigate().GoToUrl($"{host}Participante/Index");
+            _webDriver.Navigate().GoToUrl($"{host}Participante/Index");
+            _webDriver.Manage().Window.Maximize();
+            _webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
+            Thread.Sleep(500);
+            _webDriver.Url.Should().Be($"{host}Participante/FrmEditarParticipante/{participante.Id}");
+
         }
 
         [Test]
@@ -44,30 +41,24 @@ namespace StammtischControl.Tests.Selenium.Views.Participante
         {
             var participante = new ParticipanteBuilderTest().Criar();
             _repositorio.Salvar(participante);
+            _webDriver.Navigate().GoToUrl($"{host}Participante/Index");
+            _webDriver.Manage().Window.Maximize();
+            _webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
+            Thread.Sleep(500);
 
-            using (IWebDriver webDriver = new ChromeDriver())
-            {
-                webDriver.Navigate().GoToUrl($"{host}Participante/Index");
-                webDriver.Manage().Window.Maximize();
-                webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
-                Thread.Sleep(500);
+            _webDriver.FindElement(By.Name("Nome")).Clear();
+            _webDriver.FindElement(By.Name("Nome")).SendKeys("Freund Maenns");
 
-                webDriver.FindElement(By.Name("Nome")).Clear();
-                webDriver.FindElement(By.Name("Nome")).SendKeys("Freund Maenns");
+            _webDriver.FindElement(By.Name("CPF")).Clear();
+            _webDriver.FindElement(By.Name("CPF")).SendKeys("12345678901");
 
-                webDriver.FindElement(By.Name("CPF")).Clear();
-                webDriver.FindElement(By.Name("CPF")).SendKeys("12345678901");
+            _webDriver.FindElement(By.Name("Email")).Clear();
+            _webDriver.FindElement(By.Name("Email")).SendKeys("freund@outlook.com");
 
-                webDriver.FindElement(By.Name("Email")).Clear();
-                webDriver.FindElement(By.Name("Email")).SendKeys("freund@outlook.com");
-
-                webDriver.FindElement(By.Name("Telefone")).Clear();
-                webDriver.FindElement(By.Name("Telefone")).SendKeys("(47)91119030");
-                webDriver.FindElement(By.Id("salvar")).Click();
-                Thread.Sleep(500);
-
-                webDriver.Close();
-            }
+            _webDriver.FindElement(By.Name("Telefone")).Clear();
+            _webDriver.FindElement(By.Name("Telefone")).SendKeys("(47)91119030");
+            _webDriver.FindElement(By.Id("salvar")).Click();
+            Thread.Sleep(500);
 
             _repositorioContexto.Entry(participante).Reload();
 
@@ -84,27 +75,23 @@ namespace StammtischControl.Tests.Selenium.Views.Participante
             var participante = new ParticipanteBuilderTest().Criar();
             _repositorio.Salvar(participante);
 
-            using (IWebDriver webDriver = new ChromeDriver())
-            {
-                webDriver.Navigate().GoToUrl($"{host}Participante/Index");
-                webDriver.Manage().Window.Maximize();
-                webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
-                Thread.Sleep(500);
+            _webDriver.Navigate().GoToUrl($"{host}Participante/Index");
+            _webDriver.Manage().Window.Maximize();
+            _webDriver.FindElement(By.Id($"participante_{participante.Id}")).Click();
+            Thread.Sleep(500);
 
-                webDriver.FindElement(By.Name("Nome")).Clear();
-                webDriver.FindElement(By.Name("CPF")).Clear();
-                webDriver.FindElement(By.Name("Email")).Clear();
-                webDriver.FindElement(By.Name("Telefone")).Clear();
+            _webDriver.FindElement(By.Name("Nome")).Clear();
+            _webDriver.FindElement(By.Name("CPF")).Clear();
+            _webDriver.FindElement(By.Name("Email")).Clear();
+            _webDriver.FindElement(By.Name("Telefone")).Clear();
 
-                webDriver.FindElement(By.Id("salvar")).Click();
-                Thread.Sleep(50);
-                webDriver.FindElement(By.XPath("//span[@for='Nome']")).Text.Should().Be("O nome é obrigatório");
-                webDriver.FindElement(By.XPath("//span[@for='CPF']")).Text.Should().Be("O CPF é obrigatório");
-                webDriver.FindElement(By.XPath("//span[@for='Email']")).Text.Should().Be("O e-mail é obrigatório");
-                webDriver.FindElement(By.XPath("//span[@for='Telefone']")).Text.Should().Be("O telefone é obrigatório");
+            _webDriver.FindElement(By.Id("salvar")).Click();
+            Thread.Sleep(50);
+            _webDriver.FindElement(By.XPath("//span[@for='Nome']")).Text.Should().Be("O nome é obrigatório");
+            _webDriver.FindElement(By.XPath("//span[@for='CPF']")).Text.Should().Be("O CPF é obrigatório");
+            _webDriver.FindElement(By.XPath("//span[@for='Email']")).Text.Should().Be("O e-mail é obrigatório");
+            _webDriver.FindElement(By.XPath("//span[@for='Telefone']")).Text.Should().Be("O telefone é obrigatório");
 
-                webDriver.Close();
-            }
         }
     }
 }

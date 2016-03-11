@@ -112,6 +112,7 @@
     <Compile Include="Integracao\Controllers\TestParticipanteController.cs" />
     <Compile Include="Integracao\Models\Entidades\CadastroGeral\TestCategoriaItem.cs" />
     <Compile Include="Integracao\Models\Persistencia\TestRepositorio.cs" />
+    <Compile Include="Integracao\Models\SeleniumDriverBase.cs" />
     <Compile Include="Integracao\RepositorioTesteBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selenium\Views\Participante\TestFrmCadastroParticipante.cs" />
