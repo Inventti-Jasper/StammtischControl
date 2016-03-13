@@ -2,12 +2,12 @@
 using System.Web.Mvc;
 using FluentAssertions;
 using NUnit.Framework;
-using StammtischControl.Controllers;
+using StammtischControl.Controllers.CadastroGeral;
 using StammtischControl.Models.Entidades.CadastroGeral;
 using StammtischControl.Models.Persistencia;
 using StammtischControl.Tests.Builder;
 
-namespace StammtischControl.Tests.Integracao.Controllers
+namespace StammtischControl.Tests.Integracao.Controllers.CadastroGeral
 {
     public class TestCategoriaItemController: RepositorioTesteBase
     {

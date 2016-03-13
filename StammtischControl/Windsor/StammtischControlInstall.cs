@@ -1,7 +1,7 @@
 ﻿using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
-using StammtischControl.Controllers;
+using StammtischControl.Controllers.CadastroGeral;
 using StammtischControl.Models.Entidades.CadastroGeral;
 using StammtischControl.Models.Persistencia;
 

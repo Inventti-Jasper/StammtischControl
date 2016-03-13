@@ -108,8 +108,8 @@
   <ItemGroup>
     <Compile Include="Builder\CategoriaItemBuilderTest.cs" />
     <Compile Include="Builder\ParticipanteBuilderTest.cs" />
-    <Compile Include="Integracao\Controllers\TestCategoriaItemController.cs" />
-    <Compile Include="Integracao\Controllers\TestParticipanteController.cs" />
+    <Compile Include="Integracao\Controllers\CadastroGeral\TestCategoriaItemController.cs" />
+    <Compile Include="Integracao\Controllers\CadastroGeral\TestParticipanteController.cs" />
     <Compile Include="Integracao\Models\Entidades\CadastroGeral\TestCategoriaItem.cs" />
     <Compile Include="Integracao\Models\Persistencia\TestRepositorio.cs" />
     <Compile Include="Integracao\Models\SeleniumDriverBase.cs" />

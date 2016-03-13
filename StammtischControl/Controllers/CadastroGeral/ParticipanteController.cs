@@ -3,7 +3,7 @@ using System.Web.Mvc;
 using StammtischControl.Models.Entidades.CadastroGeral;
 using StammtischControl.Models.Persistencia;
 
-namespace StammtischControl.Controllers
+namespace StammtischControl.Controllers.CadastroGeral
 {
     public class ParticipanteController : Controller
     {
